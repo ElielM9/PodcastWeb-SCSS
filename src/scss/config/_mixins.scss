@@ -1,0 +1,87 @@
+@use "config/variables" as var;
+
+// Breakpoints
+@mixin phone {
+  @media (min-width: var.$phone) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: var.$tablet) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: var.$desktop) {
+    @content;
+  }
+}
+
+@mixin desktopXL {
+  @media (min-width: var.$desktopXL) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+// Grid
+@mixin grid($column, $espaciado) {
+  display: grid;
+  grid-template-columns: repeat($column, 1fr);
+  gap: $espaciado;
+}
+
+// Botones
+@mixin button($color, $text) {
+  display: block;
+  padding: 1rem 2rem;
+  background-color: $color;
+  font-size: 2rem;
+  font-weight: 700;
+  color: $text;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+  border-radius: 1rem;
+
+  @include tablet {
+    display: inline-block;
+    width: auto;
+  }
+
+  @include hover {
+    &:hover {
+      background-color: darken($color, 10%);
+      cursor: pointer;
+    }
+  }
+}
+
+@mixin bgImg($url, $color) {
+  background-image: linear-gradient($color 0%, $color 100%), url($url);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+@mixin bgIcon($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-position: 50% 2rem;
+  background-size: 10rem;
+}
+
+@mixin headingBorder($textColor, $lineColor) {
+  display: inline;
+  color: $textColor;
+  background-image: linear-gradient(to bottom, transparent 40%, $lineColor 50%);
+  background-repeat: repeat-x;
+  background-size: 100% 2rem;
+  background-position: 0 70%;
+}

@@ -1,0 +1,26 @@
+@use "config/variables" as var;
+@use "config/mixins" as mix;
+
+.plans {
+  background-color: var.$secondary-color;
+
+  &__titulo {
+    @include mix.headingBorder(var.$primary-color, var.$white);
+  }
+
+  &__paragraph {
+    color: var.$white;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+
+    @include mix.tablet {
+      flex-direction: row;
+      margin-inline: auto;
+      margin-block-start: 10rem;
+      max-width: 80rem;
+    }
+  }
+}

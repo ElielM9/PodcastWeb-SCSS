@@ -1,0 +1,16 @@
+@use "config/variables" as var;
+@use "config/mixins" as mix;
+
+.create {
+  &__grid {
+    @include mix.tablet {
+      @include mix.grid(2, 2rem);
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__titulo {
+    @include mix.headingBorder(var.$secondary-color, var.$primary-color);
+  }
+}

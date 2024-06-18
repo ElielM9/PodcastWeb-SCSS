@@ -1,0 +1,8 @@
+@use "config/variables" as var;
+@use "config/mixins" as mix;
+
+.statistics {
+  &__titulo {
+    @include mix.headingBorder(var.$secondary-color, var.$primary-color);
+  }
+}

@@ -1,0 +1,22 @@
+@use "config/variables" as var;
+@use "config/mixins" as mix;
+
+[class$="__btn"] {
+  @include mix.button(var.$primary-color, var.$secondary-color);
+}
+
+.plan-card__btn {
+  @extend [class$="__btn"];
+  display: block;
+
+  &--negocio {
+    border: 2px solid var.$white;
+
+    @include mix.hover {
+      &:hover {
+        background-color: var.$white;
+        color: var.$primary-color;
+      }
+    }
+  }
+}

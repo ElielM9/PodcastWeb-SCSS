@@ -1,0 +1,48 @@
+@use "config/variables" as var;
+@use "config/mixins" as mix;
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var.$primary-font;
+}
+
+a {
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+[class$="__contenedor"] {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 3rem 0;
+
+  @include mix.tablet {
+    padding: 8rem 0;
+  }
+}

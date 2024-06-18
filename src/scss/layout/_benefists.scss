@@ -1,0 +1,33 @@
+@use "config/variables" as var;
+@use "config/mixins" as mix;
+
+.benefists {
+  background-color: var.$primary-color;
+
+  &__grid {
+    @include mix.tablet {
+      @include mix.grid(5, 4rem);
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__contenido {
+    grid-column: 1 / 4;
+  }
+
+  &__titulo {
+    @include mix.headingBorder(var.$secondary-color, var.$white);
+  }
+
+  &__picture {
+    grid-column: 4 / 6;
+    transition: transform 0.2s ease-in-out;
+
+    @include mix.hover {
+      &:hover {
+        transform: rotate(8deg) scale(1.1);
+      }
+    }
+  }
+}
