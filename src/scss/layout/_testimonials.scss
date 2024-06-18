@@ -1,0 +1,21 @@
+@use "config/variables" as var;
+@use "config/mixins" as mix;
+
+.testimonials {
+  @include mix.tablet {
+    @include mix.grid(5, 4rem);
+    align-items: center;
+  }
+
+  &__picture {
+    grid-column: 1 / 3;
+  }
+
+  &__contenido {
+    grid-column: 3 / 6;
+  }
+
+  &__titulo {
+    @include mix.headingBorder(var.$secondary-color, var.$primary-color);
+  }
+}

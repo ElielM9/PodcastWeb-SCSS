@@ -1,0 +1,48 @@
+@use "config/variables" as var;
+@use "config/mixins" as mix;
+
+.testimonial-card {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-color: var.$primary-color;
+  border: 0.5rem solid var.$secondary-color;
+  border-radius: 1rem;
+  position: relative;
+
+  @include mix.tablet {
+    max-width: 70%;
+
+    &:nth-child(2) {
+      margin-left: 10%;
+    }
+    &:nth-child(3) {
+      margin-left: 20%;
+    }
+    &:nth-child(4) {
+      margin-left: 30%;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    background-image: url(../assets/img/comilla.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  &:first-of-type {
+    margin-top: 2rem;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &__paragraph {
+    margin: 0;
+    padding-left: 6rem;
+  }
+}

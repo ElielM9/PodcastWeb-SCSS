@@ -1,0 +1,15 @@
+@use "config/variables" as var;
+@use "config/mixins" as mix;
+
+.nav {
+  &__link {
+    display: block;
+    color: var.$white;
+    margin: 1rem 0;
+    cursor: pointer;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

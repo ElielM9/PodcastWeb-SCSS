@@ -1,0 +1,13 @@
+@use "config/mixins" as mix;
+
+.logo {
+  &__img {
+    display: block;
+    margin: 0 auto;
+    max-width: 20rem;
+
+    @include mix.tablet {
+      margin: 0;
+    }
+  }
+}
